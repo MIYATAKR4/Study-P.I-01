@@ -12,7 +12,9 @@ function ToDoList() {
       <ToDoForm adicionarTarefa={adicionarTarefa} />
       <ul>
         {tarefas.map((tarefas, index) => (
-          <li key={index}>{tarefas.tarefa}</li>
+         <li key={index}>{tarefas.tarefa}</li>
+         
+          
         ))}
       </ul>
     </div>

@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+/* header */
 .App-header {
   background: linear-gradient(#8e86cd, #e2d9f0);
+  overflow-y: scroll;
+  max-height: fit-content;
   min-height: 100vh;
   display: top;
   flex-direction: column;
@@ -18,30 +22,7 @@
   padding-right: 15px;  
 }
 
-.adicionarTarefa {
-  background: linear-gradient(#8e86cd, #e2d9f0);
-  border: 2px solid #d1cde9;
-  height: 23px;
-  width: 65px;
-  border-radius: 0px 5px 0px 5px;
-  font-size: 12px;
-  color:aliceblue;
-}
-.adicionarTarefa:hover {
-  background-color:#a8bee9
-}
-
-.form {
-  height: 20px;
-  border: 2px solid #d1cde9;
-  margin-right: 5px;
-  border-radius: 0px 5px 0px 5px;
-  padding-left: 5px;
-}
-.form:focus{
-  color: 2px solid #d1cde9;
-}
-
+/* menu */
 .menu {
   background-color: #ffffff60;
   width: auto;
@@ -69,7 +50,6 @@
   text-decoration:none;
   padding-inline: 35px;
   letter-spacing: 1px;
-  padding: 2px;
   text-align: justify;
 }
 .menu a:hover{
@@ -79,10 +59,110 @@
   letter-spacing: 1px;
 }
 
+/* task manager */
+
+/* fundo */
 .tarefas {
-  background-color: #e2d9f0;
-  height: ;
+  background-color: #ffffffa1;
+  height: fit-content;
+  margin-right: 10px;
+  text-align: center;
+  padding: 100px;
 
 }
 
+/* definir a tarefa */
+.adicionarTarefa {
+  background: linear-gradient(#8e86cd, #e2d9f0);
+  border: 2px solid #d1cde9;
+  height: auto;
+  width: auto;
+  border-radius: 0px 5px 0px 5px;
+  font-size: 20px;
+  padding: 5px;
+  color:rgb(255, 255, 255);
+}
+.form {
+  height: auto;
+  border: 2px solid #d1cde9;
+  margin-right: 5px;
+  border-radius: 0px 5px 0px 5px;
+  padding-left: 5px;
+  padding: 5px;
+  font-size: 20px;
+  color:#c5bef0
+}
+.form:focus{
+  color: 2px solid #d1cde9;
+}
+.form::placeholder {
+  color:#c5bef0
+}
 
+
+/* definir a dificuldade */
+.diff{
+  height: auto;
+  border: 2px solid #d1cde9;
+  margin-right: 5px;
+  border-radius: 0px 5px 0px 5px;
+  padding-left: 5px;
+  padding: 5px;
+  font-size: 20px;
+  color:#c5bef0;
+}
+
+
+/* definir a qtd de horas disponíveis */
+
+.hours{
+  height: auto;
+  border: 2px solid #d1cde9;
+  margin-right: 5px;
+  border-radius: 0px 5px 0px 5px;
+  padding-left: 5px;
+  padding: 5px;
+  font-size: 20px;
+  color:#c5bef0
+}
+
+/* tabela de listagem das tarefas */
+
+.listaTarefas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  padding: auto;
+  background-color: #d1cde9;
+  border: 5px dotted #e2d9f0;
+}
+
+.listaTarefas table {
+  list-style: none;
+  border-collapse: collapse;
+}
+
+.listaTarefas th, td{
+  color:#8e86cd;
+  padding: 20px;
+}
+
+.listaTarefas tbody {
+  border-radius: 10px;
+  border-color:#61dafb;
+
+}
+
+/* cronograma */
+
+/* fundo 
+.tarefas {
+  background-color: #ffffffa1;
+  height: fit-content;
+  margin-right: 10px;
+  text-align: center;
+  padding: 100px;
+
+}
+*/

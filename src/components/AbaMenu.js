@@ -44,16 +44,16 @@ return (
         </nav>
 
         <div>
-            {home == true && "boa"}
+            {home === true && "boa"}
             {!home && <div></div>}
 
-            <div class="containerList">
-            {toDoList == true && <ToDoList />}
+            <div>
+            {toDoList === true && <ToDoList />}
             {!toDoList && <div></div>}
             </div>
             
 
-            {cron == true && "boa"}
+            {cron === true && "boa"}
             {!cron && <div></div>}
 
         </div>
