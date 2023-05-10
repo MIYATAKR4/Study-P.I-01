@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 function ToDoForm(props) {
   const [tarefa, defineTarefa] = useState('');
@@ -19,34 +20,39 @@ function ToDoForm(props) {
     setHorasDisponiveis(event.target.value);
   }
 
-  /* const selecionarConcluida = (event) => {
-    setConcluida(event.target.checked);
-  } */
+  const toggle = (index) => {
+    const newTarefas = [...tarefas];
+    newTarefas[index].concluida = !newTarefas[index].concluida;
+    setTarefas(newTarefas);  }
 
   const inserirTarefa = (event) => {
     event.preventDefault();
     const novaTarefa = { 
       tarefa: tarefa, 
       dificuldade: dificuldade, 
-      horasDisponiveis: horasDisponiveis 
+      horasDisponiveis: horasDisponiveis,
+      concluida: false
     };
     setTarefas([...tarefas, novaTarefa]); 
     defineTarefa('');
     setDificuldade('');
-    setHorasDisponiveis(0);
-    enviarTarefas(novaTarefa); 
+    setHorasDisponiveis(0); 
   }
 
-  const enviarTarefas = (tarefa) => {
-   
-  }
 
   return (
     <div className="tarefas">
       <form onSubmit={inserirTarefa}>
         <div>
-          <input type="text" className="form" placeholder="Digite uma tarefa..." value={tarefa} onChange={criarTarefa} />
-          <select className="diff" value={dificuldade} onChange={selecionarDificuldade}>
+          <input 
+          type="text"
+          className="form" 
+          placeholder="Digite uma tarefa..." 
+          value={tarefa} 
+          onChange={criarTarefa} />
+
+          <select 
+          className="diff" value={dificuldade} onChange={selecionarDificuldade}>
             <option value="">Selecione a dificuldade</option>
             <option value="facil">Fácil</option>
             <option value="medio">Médio</option>
@@ -55,15 +61,17 @@ function ToDoForm(props) {
           <input className="hours" type="number" value={horasDisponiveis} onChange={selecionarHorasDisponiveis} />
           <button className="adicionarTarefa" type="submit">Adicionar</button>
         </div>
+
       </form>
       
       <div className= "listaTarefas">
         <table>
           <thead>
-            <tr className='title'>
+            <tr>
               <th>Tarefas</th>
               <th>Dificuldade</th>
               <th>Horas disponíveis</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -72,12 +80,20 @@ function ToDoForm(props) {
                 <td>{tarefa.tarefa}</td>
                 <td>{tarefa.dificuldade}</td>
                 <td>{tarefa.horasDisponiveis}</td>
+                <td>
+                  <label className="custom-checkbox">
+                    <input type="checkbox" checked={tarefa.concluida} onChange={() => toggle(index)} />
+                  </label>
+                </td>
               </tr>
-            ))}
+            ))
+            }
           </tbody>
         </table>
       </div>
 
+
+            
     </div>
   );
 }

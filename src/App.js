@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="container">
       <header className="App-header">
-        <h1 className='title'><FcNightLandscape class="icon"/>Study+</h1>
+        <h1 className='title'><FcNightLandscape className="icon"/>Study+</h1>
 
         <AbaMenu />
         
