@@ -68,8 +68,14 @@
   margin-right: 10px;
   text-align: center;
   padding: 100px;
+  display: flex;
 
 }
+.grafico {
+  flex: auto;
+}
+
+
 
 /* definir a tarefa */
 .adicionarTarefa {
@@ -157,9 +163,6 @@
 
 /*grafico*/
 
-.charte{
-padding: 10px;
-}
 
 /* cronograma */
 
