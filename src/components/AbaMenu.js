@@ -29,7 +29,7 @@ return (
             <ul>
               <li><a href="#meuConteudo" onClick={HandleClickToDoList}>meu conteudo</a></li>
               <li><a href="#cronograma" onClick={HandleClickCron}>cronograma</a></li>
-              <li><a href="#login"><AiOutlineLogin/></a></li>
+              <li className='symbol' ><a href="#login"><AiOutlineLogin/></a></li>
             </ul>
         </nav>
 
