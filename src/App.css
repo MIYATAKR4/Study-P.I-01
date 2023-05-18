@@ -24,7 +24,9 @@
 
 /* menu */
 .menu {
-  background-color: #ffffff60;
+  background-image: url(https://64.media.tumblr.com/f3cfaafb1ced902e0a868ab315f81a0b/213a772ae814f194-0f/s1280x1920/61807da950578f45297785903238b91b6e65c786.gif);
+  background-position: top right;
+  background-size: 30% auto; 
   width: auto;
   justify-content: space-between;
   margin-top: 10px;
@@ -40,8 +42,12 @@
   padding: 15px;
   height: 20px;
   padding-inline: 35px;
-  background-color: #c5bef0;
+  background-color: #bbb0f7;
   border-radius: 0px 5px 0px 5px;
+}
+
+.symbol{
+  border-right: 2px solid #d2ccf4;
 }
 
 .menu a{
@@ -52,6 +58,7 @@
   letter-spacing: 1px;
   text-align: justify;
 }
+
 .menu a:hover{
   display:block;
   color: #ded2fd;
@@ -68,8 +75,15 @@
   margin-right: 10px;
   text-align: center;
   padding: 100px;
+  display: flex;
 
 }
+
+.input-lista{
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* definir a tarefa */
 .adicionarTarefa {
@@ -150,16 +164,18 @@
 
 .listaTarefas tbody {
   border-radius: 10px;
-  border-color:#61dafb;
+  border-color:#a095e6;
 
 }
 
 
 /*grafico*/
-
-.charte{
-padding: 10px;
+.grafico {
+  width: 300px;
+  height: 300px;
+  padding-left: 100px;
 }
+
 
 /* cronograma */
 
