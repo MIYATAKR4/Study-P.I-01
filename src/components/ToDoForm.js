@@ -164,6 +164,8 @@ function ToDoForm(props) {
             <canvas id="myChart">
             </canvas>
            </div>
+            {/* FIM ELEMENTO 2 = GRAFICO */}
+
 
         </div> 
 

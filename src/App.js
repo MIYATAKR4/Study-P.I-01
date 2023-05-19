@@ -1,20 +1,13 @@
 import React from 'react';
 import AbaMenu from './components/AbaMenu';
 import './App.css';
-import { FcNightLandscape } from "react-icons/fc";
+import AppRoutes from './AppRoutes';
 
 function App() {
   return (
     <div className="container">
-      <header className="App-header">
-        <h1 className='title'><FcNightLandscape className="icon"/>Study+</h1>
-
-        <AbaMenu />
-        
-      </header>
+      <AppRoutes />
     </div>
-
-
   );
 }
 

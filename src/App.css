@@ -1,4 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+/* tela de login */
+
+.welcome{
+  flex-direction: column;
+  align-items:right;
+  padding-left: 10px;
+  justify-content: center;
+  padding: 10px;
+  font-size: calc(8px + 2vmin);
+  
+  background-image: linear-gradient(to right,#e5d6ff, #d3b9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+body {
+  background: linear-gradient(to bottom, #8e86cd 0%, #c5bef0 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  padding: 20px;
+  outline: dashed 4px #ded2fd;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+
+  min-height: fit-content;
+  max-width: fit-content;
+  padding: 30px;
+  background-image: url(https://i.pinimg.com/originals/ae/5f/45/ae5f4530fc45074f9b347202171808ad.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+.titlo{
+  color:#ffffff;
+  text-shadow: 2px 2px 2px #795fb7;
+  text-align: center;
+}
+
+.email {
+  color:#795fb7
+}
+.senha{
+  color:#795fb7
+}
+
+.login input {
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #d1cde9;
+  margin-right: 5px;
+  margin-left: 10px;
+  border-radius: 0px 5px 0px 5px;
+  padding-left: 5px;
+  padding: 3px;
+  font-size: 20px;
+  color:#c5bef0
+}
+
+.login input:-webkit-autofill {
+    -webkit-text-fill-color: #967ad5;
+
+}
+
+.login button {
+  background: linear-gradient(#8e86cd, #e2d9f0);
+  border: 2px solid #d1cde9;
+  height: auto;
+  width: auto;
+  margin: 7px;
+  border-radius: 0px 5px 0px 5px;
+  font-size: 15px;
+  padding: 5px;
+  color:rgb(255, 255, 255);
+}
+
+.login button:hover {
+  background: linear-gradient(#7b70cc, #ccbce7);
+}
+
 /* header */
 .App-header {
   background: linear-gradient(#8e86cd, #e2d9f0);
@@ -44,6 +137,10 @@
   padding-inline: 35px;
   background-color: #bbb0f7;
   border-radius: 0px 5px 0px 5px;
+}
+
+.menu li:hover{
+  background-color: #a79ce3;
 }
 
 .symbol{
@@ -96,6 +193,11 @@
   padding: 5px;
   color:rgb(255, 255, 255);
 }
+
+.adicionarTarefa:hover {
+  background: linear-gradient(#7b70cc, #ccbce7);
+}
+
 .form {
   height: auto;
   border: 2px solid #d1cde9;
