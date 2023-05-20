@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/auth";
+import { useNavigate } from 'react-router-dom';
+
 
 //video ajuda: https://youtu.be/5KqP3Vx8Y4s
 
@@ -10,6 +12,8 @@ function LoginPage() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
+    const navigate = useNavigate();
+
 
 
 
@@ -22,7 +26,11 @@ function LoginPage() {
         login(email, password); // integração com o context/api
     };
 
-
+    function handleLogin() {
+        // Lógica para executar o logout (por exemplo, limpar o token de autenticação)
+        // Redirecionar para a página de login
+        navigate('/');
+      }
 
     return (
  <div>
@@ -48,8 +56,8 @@ function LoginPage() {
                     />
                 </div>
 
-                <div className="actions">
-                    <button type="submit">Entrar</button>
+                <div className="actions">s
+                    <button type="submit" onClick={handleLogin}>Entrar</button>
                 </div>
             </form>
         </div>

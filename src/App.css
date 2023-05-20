@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 /* tela de login */
 
+
 .welcome{
   flex-direction: column;
   align-items:right;
@@ -8,7 +9,6 @@
   justify-content: center;
   padding: 10px;
   font-size: calc(8px + 2vmin);
-  
   background-image: linear-gradient(to right,#e5d6ff, #d3b9ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -34,7 +34,6 @@ body {
   text-align: center;
   justify-content: center;
   margin: auto;
-
   min-height: fit-content;
   max-width: fit-content;
   padding: 30px;
@@ -94,10 +93,8 @@ body {
 
 /* header */
 .App-header {
-  background: linear-gradient(#8e86cd, #e2d9f0);
-  overflow-y: scroll;
   max-height: fit-content;
-  min-height: 100vh;
+  min-height: fit-content;
   display: top;
   flex-direction: column;
   align-items:right;
@@ -117,10 +114,11 @@ body {
 
 /* menu */
 .menu {
+  position: relative;
   background-image: url(https://64.media.tumblr.com/f3cfaafb1ced902e0a868ab315f81a0b/213a772ae814f194-0f/s1280x1920/61807da950578f45297785903238b91b6e65c786.gif);
   background-position: top right;
   background-size: 30% auto; 
-  width: auto;
+  width: 1400px;
   justify-content: space-between;
   margin-top: 10px;
   margin-right: 10px;
@@ -147,6 +145,35 @@ body {
   border-right: 2px solid #d2ccf4;
 }
 
+.logout-box {
+  position: absolute;
+  background-color: #bbb2ef;
+  padding: 10px;
+  border: 1px solid #bbb2ef;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px #ffffff;
+  display: none;
+}
+
+.logout-box button {
+  background-color: #bbb2ef;
+  border: 0px solid #d1cde9;
+  height: auto;
+  width: auto;
+  margin: 7px;
+  border-radius: 0px 5px 0px 5px;
+  font-size: 15px;
+  padding: 5px;
+  color:rgb(255, 255, 255);
+}
+
+.logout-box button:hover {
+  background-color: #8e80de;
+}
+
+.symbol:hover .logout-box {
+  display: block;
+}
 .menu a{
   display:block;
   color: #fff;

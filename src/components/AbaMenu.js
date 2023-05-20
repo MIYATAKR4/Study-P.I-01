@@ -1,53 +1,59 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ToDoList from './ToDoList';
 import { AiOutlineLogin } from 'react-icons/ai';
 
-
-function AbaMenu(){
-
-    const [toDoList, setToDoList] = useState();
-    const [cron, setCron] = useState();
-
+function AbaMenu() {
+  const [activeTab, setActiveTab] = useState('todolist');
+  const [loginVisible, setLoginVisible] = useState(false);
+  const navigate = useNavigate();
 
 
-function HandleClickToDoList(){
-    setToDoList(!toDoList);
-    setCron(false);
+  function handleClickCron() {
+    setActiveTab(activeTab === 'todolist' ? 'cronograma' : 'todolist');
+  }
 
 
-}
+  function handleLogout() {
+    // Lógica para executar o logout (por exemplo, limpar o token de autenticação)
+    // Redirecionar para a página de login
+    navigate('/login');
+  }
 
-function HandleClickCron(){
-    setToDoList(false);
-    setCron(!cron);
-
-}
-
-return (
+  return (
     <div>
-        <nav className="menu">
-            <ul>
-              <li><a href="#meuConteudo" onClick={HandleClickToDoList}>meu conteudo</a></li>
-              <li><a href="#cronograma" onClick={HandleClickCron}>cronograma</a></li>
-              <li className='symbol' ><a href="#login"><AiOutlineLogin/></a></li>
-            </ul>
-        </nav>
+      <nav className="menu">
+        <ul>
+        <li>
+            <a href="#cronograma" onClick={handleClickCron}>
+                {activeTab === 'todolist' ? 'cronograma' : 'voltar'}
+            </a>
+         </li>
 
-        <div>
-            <div>
-            {toDoList === true && <ToDoList />}
-            {!toDoList && <div></div>}
+         <li className="symbol">
+            <div
+              className="login-icon"
+              onMouseEnter={() => setLoginVisible(true)}
+              onMouseLeave={() => setLoginVisible(false)}
+            >
+              <AiOutlineLogin />
+              {loginVisible && (
+                <div className="logout-box">
+                  <button className="logout-button" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </div>
+              )}
             </div>
-            
+          </li>
+        </ul>
+      </nav>
 
-            {cron === true && "boa"}
-            {!cron && <div></div>}
-
-        </div>
-
-
+      <div>
+      {activeTab === 'todolist' ? <ToDoList /> : 'cronograma aqui'}
+      </div>
     </div>
-)
+  );
 }
 
 export default AbaMenu;
