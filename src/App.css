@@ -297,6 +297,11 @@ body {
 
 }
 
+.excluirTarefa {
+  
+  color: transparent;
+
+}
 
 /*grafico*/
 .grafico {
@@ -308,13 +313,36 @@ body {
 
 /* cronograma */
 
-/* fundo 
-.tarefas {
+/* fundo */
+.cronograma {
   background-color: #ffffffa1;
-  height: fit-content;
+  height: 300px;
   margin-right: 10px;
   text-align: center;
   padding: 100px;
 
 }
-*/
+
+/* tabela */
+
+.tabelacron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  padding: auto;
+  background-color: #d1cde9;
+  border: 5px dotted #e2d9f0;
+}
+
+.tabelacron table {
+  list-style: none;
+  border-collapse: collapse;
+}
+
+.tabelacron th, td{
+  color:#8e86cd;
+  border-bottom: 1px solid #ddd; 
+  padding: 20px;
+}
+

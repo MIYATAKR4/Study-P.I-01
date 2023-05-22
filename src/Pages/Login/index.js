@@ -56,7 +56,7 @@ function LoginPage() {
                     />
                 </div>
 
-                <div className="actions">s
+                <div className="actions">
                     <button type="submit" onClick={handleLogin}>Entrar</button>
                 </div>
             </form>

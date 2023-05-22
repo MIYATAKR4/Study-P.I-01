@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Chart, registerables  } from 'chart.js';
 import '../App.css';
+import { FcEmptyTrash } from "react-icons/fc";
+
+/* import axios from 'axios'; */
+
 
 /* INICIO GERENCIADOR DE TAREFAS */
 
@@ -25,10 +29,30 @@ function ToDoForm(props) {
     setHorasDisponiveis(event.target.value);
   };
 
+  const excluirTarefa = (index) => {
+    const newTarefas = [...tarefas];
+    newTarefas.splice(index, 1);
+    setTarefas(newTarefas);
+  };
+
   const toggle = (index) => {
     const newTarefas = [...tarefas];
     newTarefas[index].concluida = !newTarefas[index].concluida;
-    setTarefas(newTarefas);  }
+    setTarefas(newTarefas);
+  };
+
+    /* // endpoints
+    const tarefaId = tarefas[index]._id;
+    axios
+      .put(`/tasks/${tarefaId}`, { concluida: tarefas[index].concluida })
+      .then(() => {
+        setTarefas([...tarefas]);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  */
+ 
 
   const inserirTarefa = (event) => {
     event.preventDefault();
@@ -43,7 +67,36 @@ function ToDoForm(props) {
     setDificuldade('');
     setHorasDisponiveis(0); 
   };
+
+    /* // endpoints
+    axios
+      .post('/tasks', novaTarefa)
+      .then(() => {
+        setTarefas([...tarefas, novaTarefa]);
+        defineTarefa('');
+        setDificuldade('');
+        setHorasDisponiveis(0);
+        //exibe mensagem de sucesso p usuario
+        alert('Tarefa criada com sucesso :v');
+      })
+      .catch((error) => {
+        if (error.response) {
+          // erro de resposta do servidor = status diferente de 2xx
+          console.error(error.response.data);
+          console.error(error.response.status);
+        } else if (error.request) {
+          // erro de requisiçao = sem resposta do servidor
+          console.error(error.request);
+        } else {
+          // outros erros
+          console.error(error);
+        }
+        // exibe  mensagem de erro p usuario
+        alert('Erro ao criar a tarefa :/');
+      });*/
+ 
   /* FIM GERENCIADOR DE TAREFAS */
+
   /* INICIO GRÁFICO DE TAREFAS */
   const gerarGrafico = useCallback(() => {
     const tarefasCompletas = tarefas.filter(tarefa => tarefa.concluida).length ;
@@ -121,6 +174,7 @@ function ToDoForm(props) {
                   <input 
                   className="hours" 
                   type="number" 
+                  title="Selecione as horas disponíveis para estudo nas setas"
                   value={horasDisponiveis} 
                   onChange={selecionarHorasDisponiveis} />
 
@@ -147,8 +201,15 @@ function ToDoForm(props) {
                             <td>{tarefa.horasDisponiveis}</td>
                             <td>
                               <label className="custom-checkbox">
-                                <input type="checkbox" checked={tarefa.concluida} onChange={() => toggle(index)} />
+                                <input type="checkbox" checked={tarefa.concluida} onChange={() => toggle(index)} title="Marcar como concluída"/>
                               </label>
+                            </td>
+                            <td>
+                              <div className="excluirTarefa">
+                              <button onClick={() => excluirTarefa(index)} title="Excluir tarefa">
+                                <i><FcEmptyTrash  /> </i>
+                              </button>
+                              </div>
                             </td>
                           </tr>
                         ))

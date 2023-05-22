@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ToDoList from './ToDoList';
 import { AiOutlineLogin } from 'react-icons/ai';
+import CronogramaPersonalizado from './Cronograma';
 
 function AbaMenu() {
   const [activeTab, setActiveTab] = useState('todolist');
@@ -50,7 +51,7 @@ function AbaMenu() {
       </nav>
 
       <div>
-      {activeTab === 'todolist' ? <ToDoList /> : 'cronograma aqui'}
+      {activeTab === 'todolist' ? <ToDoList /> : <CronogramaPersonalizado />}
       </div>
     </div>
   );
