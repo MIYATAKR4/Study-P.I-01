@@ -15,6 +15,9 @@ function ToDoForm(props) {
   const [tarefas, setTarefas] = useState([]); 
   const [chartData, setChartData] = useState({})
   const chartRef = useRef(null);
+  const [ultimaQuantidadeHoras, setUltimaQuantidadeHoras] = useState(0); // Nova variável de estado
+
+  
   
 
   const criarTarefa = (event) => {
@@ -53,19 +56,22 @@ function ToDoForm(props) {
       });
   */
  
+      const inserirHoras = (event) => {
+        event.preventDefault();
+        setUltimaQuantidadeHoras(horasDisponiveis); // Atualiza a última quantidade de horas adicionada
+        setHorasDisponiveis(0); // Reinicia o valor das horas disponíveis para zero
+      }
 
   const inserirTarefa = (event) => {
     event.preventDefault();
     const novaTarefa = { 
       tarefa: tarefa, 
       dificuldade: dificuldade, 
-      horasDisponiveis: horasDisponiveis,
       concluida: false
     };
     setTarefas([...tarefas, novaTarefa]); 
     defineTarefa('');
     setDificuldade('');
-    setHorasDisponiveis(0); 
   };
 
     /* // endpoints
@@ -170,26 +176,34 @@ function ToDoForm(props) {
                     <option value="medio">Médio</option>
                     <option value="dificil">Difícil</option>
                   </select>
-
-                  <input 
-                  className="hours" 
-                  type="number" 
-                  title="Selecione as horas disponíveis para estudo nas setas"
-                  value={horasDisponiveis} 
-                  onChange={selecionarHorasDisponiveis} />
-
                   <button className="adicionarTarefa" type="submit">Adicionar</button>
 
+                  
                 </div>
             </form>
-        
+
+            <form onSubmit={inserirHoras}>
+        <div>
+          <label className='horaSemana'> Horas disponíveis:</label>
+          <input
+            className="hours"
+            type="number"
+            title="Digite a quantidade de horas semanais disponíveis para estudo"
+            value={horasDisponiveis}
+            onChange={selecionarHorasDisponiveis}
+          />
+          <button className="adicionarTarefa" type="submit">Adicionar</button>
+          <div className='ultHora'>{ultimaQuantidadeHoras} Horas </div> 
+        </div>
+      </form>
+
+
                 <div className= "listaTarefas">
                     <table>
                       <thead>
                         <tr>
                           <th>Tarefas</th>
                           <th>Dificuldade</th>
-                          <th>Horas disponíveis</th>
                           <th>Status</th>
                         </tr>
                       </thead>
@@ -198,7 +212,6 @@ function ToDoForm(props) {
                           <tr key={index}>
                             <td>{tarefa.tarefa}</td>
                             <td>{tarefa.dificuldade}</td>
-                            <td>{tarefa.horasDisponiveis}</td>
                             <td>
                               <label className="custom-checkbox">
                                 <input type="checkbox" checked={tarefa.concluida} onChange={() => toggle(index)} title="Marcar como concluída"/>

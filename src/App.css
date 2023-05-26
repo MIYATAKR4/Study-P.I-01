@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 /* tela de login */
-
-
-.welcome{
+.welcome {
   flex-direction: column;
-  align-items:right;
+  align-items: right;
   padding-left: 10px;
   justify-content: center;
   padding: 10px;
   font-size: calc(8px + 2vmin);
-  background-image: linear-gradient(to right,#e5d6ff, #d3b9ff);
+  background-image: linear-gradient(to right, #e5d6ff, #d3b9ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Amatic SC', cursive;
 }
-
 
 body {
   background: linear-gradient(to bottom, #8e86cd 0%, #c5bef0 100%);
@@ -42,17 +41,21 @@ body {
   background-position: center;
 }
 
-.titlo{
-  color:#ffffff;
+.titlo {
+  color: #ffffff;
   text-shadow: 2px 2px 2px #795fb7;
   text-align: center;
+  font-family: 'Amatic SC', cursive;
 }
 
 .email {
-  color:#795fb7
+  color: #795fb7;
+  font-family: 'Amatic SC', cursive;
 }
-.senha{
-  color:#795fb7
+
+.senha {
+  color: #795fb7;
+  font-family: 'Amatic SC', cursive;
 }
 
 .login input {
@@ -67,12 +70,11 @@ body {
   padding-left: 5px;
   padding: 3px;
   font-size: 20px;
-  color:#c5bef0
+  color: #c5bef0;
 }
 
 .login input:-webkit-autofill {
-    -webkit-text-fill-color: #967ad5;
-
+  -webkit-text-fill-color: #967ad5;
 }
 
 .login button {
@@ -84,7 +86,8 @@ body {
   border-radius: 0px 5px 0px 5px;
   font-size: 15px;
   padding: 5px;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  font-family: 'Amatic SC', cursive;
 }
 
 .login button:hover {
@@ -97,19 +100,20 @@ body {
   min-height: fit-content;
   display: top;
   flex-direction: column;
-  align-items:right;
+  align-items: right;
   padding-left: 10px;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #fefeff;
+  font-family: 'Amatic SC', cursive;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.icon{
-  padding-right: 15px;  
+.icon {
+  padding-right: 15px;
 }
 
 /* menu */
@@ -117,18 +121,18 @@ body {
   position: relative;
   background-image: url(https://64.media.tumblr.com/f3cfaafb1ced902e0a868ab315f81a0b/213a772ae814f194-0f/s1280x1920/61807da950578f45297785903238b91b6e65c786.gif);
   background-position: top right;
-  background-size: 30% auto; 
-  width: 1400px;
+  background-size: 30% auto;
+  width: 99,9%;
+  max-width: 100%;
   justify-content: space-between;
   margin-top: 10px;
   margin-right: 10px;
   height: auto;
   font-size: 20px;
   border-radius: 0px 5px 0px 5px;
-
 }
 
-.menu li{
+.menu li {
   display: inline-block;
   padding: 15px;
   height: 20px;
@@ -137,11 +141,11 @@ body {
   border-radius: 0px 5px 0px 5px;
 }
 
-.menu li:hover{
+.menu li:hover {
   background-color: #a79ce3;
 }
 
-.symbol{
+.symbol {
   border-right: 2px solid #d2ccf4;
 }
 
@@ -164,7 +168,7 @@ body {
   border-radius: 0px 5px 0px 5px;
   font-size: 15px;
   padding: 5px;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
 .logout-box button:hover {
@@ -174,19 +178,21 @@ body {
 .symbol:hover .logout-box {
   display: block;
 }
-.menu a{
-  display:block;
+
+.menu a {
+  display: block;
   color: #fff;
-  text-decoration:none;
+  text-decoration: none;
   padding-inline: 35px;
   letter-spacing: 1px;
   text-align: justify;
+  font-family: 'Amatic SC', cursive;
 }
 
-.menu a:hover{
-  display:block;
+.menu a:hover {
+  display: block;
   color: #ded2fd;
-  text-decoration:none;
+  text-decoration: none;
   letter-spacing: 1px;
 }
 
@@ -197,17 +203,16 @@ body {
   background-color: #ffffffa1;
   height: fit-content;
   margin-right: 10px;
+  margin-bottom: 30px;
   text-align: center;
   padding: 100px;
   display: flex;
-
 }
 
-.input-lista{
+.input-lista {
   display: flex;
   flex-direction: column;
 }
-
 
 /* definir a tarefa */
 .adicionarTarefa {
@@ -218,7 +223,8 @@ body {
   border-radius: 0px 5px 0px 5px;
   font-size: 20px;
   padding: 5px;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  font-family: 'Amatic SC', cursive;
 }
 
 .adicionarTarefa:hover {
@@ -233,18 +239,20 @@ body {
   padding-left: 5px;
   padding: 5px;
   font-size: 20px;
-  color:#c5bef0
+  color: #c5bef0;
+  font-family: 'Amatic SC', cursive;
 }
-.form:focus{
+
+.form:focus {
   color: 2px solid #d1cde9;
 }
+
 .form::placeholder {
-  color:#c5bef0
+  color: #c5bef0;
 }
 
-
 /* definir a dificuldade */
-.diff{
+.diff {
   height: auto;
   border: 2px solid #d1cde9;
   margin-right: 5px;
@@ -252,26 +260,43 @@ body {
   padding-left: 5px;
   padding: 5px;
   font-size: 20px;
-  color:#c5bef0;
+  color: #c5bef0;
+  font-family: 'Amatic SC', cursive;
 }
-
 
 /* definir a qtd de horas disponíveis */
 
-.hours{
+.hours {
   height: auto;
   border: 2px solid #d1cde9;
   margin-right: 5px;
+  margin: 10px;
   border-radius: 0px 5px 0px 5px;
   padding-left: 5px;
   padding: 5px;
   font-size: 20px;
-  color:#c5bef0
+  color: #c5bef0;
+  font-family: 'Amatic SC', cursive;
+}
+
+.horaSemana {
+  color: #8e86cd;
+  padding: 20px;
+}
+
+.ultHora {
+  color: #8e86cd;
+  border: 5px solid #d1cde9;
+  padding: 10px;
+  margin: auto;
+  background-color: #f2f0ff;
+  min-height: fit-content;
+  max-width: fit-content;
 }
 
 /* tabela de listagem das tarefas */
 
-.listaTarefas{
+.listaTarefas {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,21 +311,19 @@ body {
   border-collapse: collapse;
 }
 
-.listaTarefas th, td{
-  color:#8e86cd;
+.listaTarefas th,
+td {
+  color: #8e86cd;
   padding: 20px;
 }
 
 .listaTarefas tbody {
   border-radius: 10px;
-  border-color:#a095e6;
-
+  border-color: #a095e6;
 }
 
 .excluirTarefa {
-  
   color: transparent;
-
 }
 
 /*grafico*/
@@ -309,7 +332,6 @@ body {
   height: 300px;
   padding-left: 100px;
 }
-
 
 /* cronograma */
 
@@ -320,7 +342,6 @@ body {
   margin-right: 10px;
   text-align: center;
   padding: 100px;
-
 }
 
 /* tabela */
@@ -340,9 +361,9 @@ body {
   border-collapse: collapse;
 }
 
-.tabelacron th, td{
-  color:#8e86cd;
-  border-bottom: 1px solid #ddd; 
+.tabelacron th,
+td {
+  color: #8e86cd;
+  border-bottom: 1px solid #ddd;
   padding: 20px;
 }
-
